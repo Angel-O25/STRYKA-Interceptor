@@ -1,0 +1,29 @@
+# Excluded folders
+detached/
+ardupilot/
+
+# ROS 2 build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Large files — do NOT commit these
+*.bag
+rosbag2_*/
+datasets/
+*.pt
+*.onnx
+*.hef
+*.engine
+*.BIN
+*.tlog
+
+# Editor / OS
+.vscode/settings.json
+.DS_Store
