@@ -1,0 +1,32 @@
+# STRYKA runtime parameters.
+#
+# The comments are load-bearing: they record which values are MEASURED and
+# which are still GUESSES. Do not delete them, and update the tag when a value
+# is replaced with a real measurement.
+#
+# focal_px is the only value that changes when the lens changes. Nothing
+# downstream is allowed to hard-code a pixel-to-angle conversion -- every
+# angle in the system is derived from this one number.
+
+camera:
+  focal_px: 1778.0        # f_px at 640 model input, 16 mm lens -- MEASURE AND REPLACE
+  model_input_px: 640
+  sensor_width_px: 1920
+  sensor_height_px: 1200
+
+detector:
+  confidence_threshold: 0.35
+  detection_floor_px: 20   # ASSUMED from literature -- replace with the W4 lens test measurement
+
+tracker:
+  coast_limit_frames: 15
+  latency_compensation_s: 0.10   # MEASURE with latency_probe.py at W10
+
+guidance:
+  pn_gain: 3.0            # UNSET -- tune in simulation
+  max_closing_speed: 5.0
+  fov_hold_margin_deg: 3.0
+
+mission:
+  setpoint_rate_hz: 20.0
+  abort_range_floor_m: 3.0

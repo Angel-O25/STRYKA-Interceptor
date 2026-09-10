@@ -1,5 +1,6 @@
 # Excluded folders
 detached/
+scratch/
 ardupilot/
 
 # ROS 2 build artifacts
@@ -23,6 +24,15 @@ datasets/
 *.engine
 *.BIN
 *.tlog
+
+# SITL run artifacts (dumped into CWD when sim_vehicle.py runs from the repo root)
+eeprom.bin
+mav.parm
+mav.tlog*
+*.tlog.raw
+terrain/
+logs/
+install_geographiclib_datasets.sh
 
 # Editor / OS
 .vscode/settings.json
